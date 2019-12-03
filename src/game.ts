@@ -39,7 +39,7 @@ export interface GameState {
 
 type PlayFunction = (game: GameState, targetPlayer?: PlayerState, targetMonster?: Monster) => void;
 
-export function createMinionFunctionFactory(health: number, attack: number): PlayFunction {
+function createMinionFunctionFactory(health: number, attack: number): PlayFunction {
     return (game: GameState, targetPlayer?: PlayerState, targetMonster?: Monster) => {
         if (!targetPlayer) {
             throw "No target player";
@@ -55,7 +55,7 @@ export function createMinionFunctionFactory(health: number, attack: number): Pla
     };
 }
 
-export function goldenArmorFunctionFactory(enchant: number): PlayFunction {
+function goldenArmorFunctionFactory(enchant: number): PlayFunction {
     return (game: GameState, targetPlayer?: PlayerState, targetMonster?: Monster) => {
         if (!targetPlayer) {
             throw "No target player";
@@ -68,7 +68,7 @@ export function goldenArmorFunctionFactory(enchant: number): PlayFunction {
     };
 }
 
-export function killMonsterFunctionFactory(): PlayFunction {
+function killMonsterFunctionFactory(): PlayFunction {
     return (game: GameState, targetPlayer?: PlayerState, targetMonster?: Monster) => {
         if (!targetPlayer) {
             throw "No target player";
