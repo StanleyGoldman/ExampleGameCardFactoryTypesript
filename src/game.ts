@@ -83,7 +83,7 @@ function killMonsterFunctionFactory(): PlayFunction {
 }
 
 export function createCard(name: CardName): Card {
-    var play: (game: GameState, targetPlayer?: PlayerState, targetMonster?: Monster) => void;
+    var play: PlayFunction;
 
     switch (name) {
         case CardName.CreateWeakMinion:
